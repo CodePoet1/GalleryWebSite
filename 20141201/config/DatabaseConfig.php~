@@ -1,0 +1,169 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "monty123";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Create database
+$sql = "CREATE DATABASE AnthonyOrme_DB";
+if ($conn->query($sql) === TRUE) {
+    echo "Database created successfully\n";
+    
+    $conn = mysql_connect($servername, $username, $password);
+    if(! $conn ){
+        die('Could not connect: ' . mysql_error());
+    }
+    echo 'Connected successfully -> $conn->';
+    
+    create_table_picture($conn);
+    create_table_painting_type($conn);
+    create_table_version_listing($conn);
+
+    insert_test_data_into_picture($conn);
+    insert_test_data_into_painting_type($conn);
+    insert_test_data_into_version_listing($conn);
+}
+
+
+function create_table_picture($conn)
+{
+    $sql = "CREATE TABLE picture( 
+        Id                      INT NOT NULL AUTO_INCREMENT,
+        MainPictureFilename     VARCHAR(64) NOT NULL,
+        GalleryPictureFilename  VARCHAR(64) NOT NULL,
+        VersionType             INT NOT NULL,
+        Description             VARCHAR(1024) NOT NULL,
+        primary key (Id))";
+    
+    mysql_select_db('AnthonyOrme_DB');
+    $retval = mysql_query( $sql, $conn );
+    if(! $retval )
+    {
+        die('Could not create table: ' . mysql_error());
+    }
+    echo "Table picture created successfully\n";
+}
+
+//        primary key (Id),
+//        foreign key (PicId) references picture(Id))";
+
+function create_table_version_listing($conn)
+{
+    $sql = "CREATE TABLE version_listing(
+        Id                      INT NOT NULL AUTO_INCREMENT,
+        PicId                   INT NOT NULL,
+        PaintingType            INT NOT NULL,
+        SizeWidth               INT NOT NULL,
+        SizeHeight              INT NOT NULL,
+        Price                   DECIMAL(6,2) NOT NULL,
+        primary key (Id),
+        foreign key (PicId) references  picture(Id),
+        foreign key (PaintingType) references painting_type(Id))";   
+
+
+    mysql_select_db('AnthonyOrme_DB');
+    $retval = mysql_query( $sql, $conn );
+    if(! $retval )
+    {
+        die('Could not insert data into media_type: ' . mysql_error());
+    }
+    echo "Table media_type inserted data successfully\n";
+}
+
+function create_table_painting_type($conn)
+{
+    $sql = "CREATE TABLE painting_type(
+        Id                      INT NOT NULL AUTO_INCREMENT,
+        Description             VARCHAR(128) NOT NULL,
+        primary key (Id))";
+    mysql_select_db('AnthonyOrme_DB');
+    $retval = mysql_query( $sql, $conn );
+    if(! $retval )
+    {
+        die('Could not create painting_type: ' . mysql_error());
+    }
+    echo "Table painting_type created successfully\n";
+}
+
+function insert_test_data_into_painting_type($conn)
+{
+    $sql = "INSERT INTO painting_type(
+           Description)
+           VALUES
+           ('Original'),
+           ('Original Oil'),
+           ('Original Pastel'),
+           ('Print'),
+           ('Giclee Print')";
+    mysql_select_db('AnthonyOrme_DB');
+    $retval = mysql_query( $sql, $conn );
+    if(! $retval )
+    {
+        die('Could not insert data into painting_type: ' . mysql_error());
+    }
+    echo "Test data inserted into painting_type table\n";
+}
+
+function insert_test_data_into_picture($conn)
+{
+    $sql = "INSERT INTO picture (
+         MainPictureFilename, 
+         GalleryPictureFilename,
+         VersionType,
+         Description)
+         VALUES(
+         'Manchester.jpg',
+         'Manchester-Gallery.jpg',
+         '1', 'Manchester Town'),
+         (
+         'RedWine.jpg',
+         'RedWine-Gallery.jpg',
+         '1', 'Red Wine Relaxing')";
+    
+    mysql_select_db('AnthonyOrme_DB');
+    $retval = mysql_query( $sql, $conn );
+    if(! $retval )
+    {
+        die('Could not insert data into picture: ' . mysql_error());
+    }
+    echo "Test data inserted into picture table\n";
+}
+
+function insert_test_data_into_version_listing($conn)
+{
+    $sql = "INSERT INTO version_listing(
+         PicID,
+         PaintingType,
+         SizeWidth,
+         SizeHeight,
+         Price)
+         VALUES
+         ('1','1','100','200','127'),
+         ('1','2','100','200','100'),
+         ('1','3','100','200','2500')";
+
+    mysql_select_db('AnthonyOrme_DB');
+    $retval = mysql_query( $sql, $conn );
+    if(! $retval )
+    {
+        die('Could not insert data into media_type: ' . mysql_error());
+    }
+    echo "Test data insered into picture table\n";
+          
+}
+
+
+/*
+  script for each picture;
+  select * from picture inner join media_type 
+           on Picture.Id = media_type.PicId 
+           and media_type.PicId = 1;
+*/
+?> 
+

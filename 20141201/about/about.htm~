@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<html>
+  <head>
+    <link rel="stylesheet" href="../mainstyle.css">
+  </head>
+  
+  <body>
+
+    <div class="header"><b>A n t h o n y &nbsp &nbspO r m e</b></div>
+
+    <div class="container clearfix">  
+
+      <div class="sidebar_left">	
+	<a href="../index.htm">Home</a><br>
+      </div>  
+      
+      <div class="main">
+
+      	<img class="TextWrapLeft" src="../pictures/EAnthonyOrme.jpg" width="25%">
+ 	<P>
+	  <b>E. Anthony Orme B.S.P., F.I.G.A., B.G.A.P. </b>was born in Manchester, England, 
+	  in 1945.  He Studied Life and Still Life at the Manchester College of Art and Design, 
+	  later	qualifying as a hand engraver and etcher.
+	</p>
+	<p>
+	  It was apparent from a very early stage that he was a naturally skilled artist
+	  and he continally applied these skills whilst endlessly searching for technique
+	  and perfection to personalise his style of painting.
+	</p>
+	<p>
+	  Anthony travels world-wide in his pursuit of new and exciting work.  The light which
+	  eminates from his paintings of southern France is a refreshing realism, whilst his
+	  Parisian cafe scenes bring a touch of nostalgic impressionism.
+	</p>
+	<p>
+	  He also produces paintings of British scenes (modern and nostalgic). He works from
+	  his Manchester studio, where he produces pastels and oils of nudes, semi-nudes and
+	  his much sort after ballerinas.
+	</p>
+	
+      </div>  
+      
+      <div class="sidebar_right">
+	<p>
+	  <I><b>"I bought this painting last year and it has pride of place in my lounge"
+	      <BR></b>Claire, Manchester</I>
+	</p>
+      </div>  
+    </div>  
+    
+    <div class="footer">
+      Copyright 2014 Anthony Orme
+    </div>
+    
+  </body>
+</html>

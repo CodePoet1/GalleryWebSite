@@ -1,0 +1,6 @@
+use database AnthonyOrme_DB;
+select picture.MainPictureFilename, painting_type.Description, gallery.Description
+       from picture
+       inner join painting_type on version_listing.PaintingType=painting_type.Id
+       inner join gallery.Id=1
+       inner join version_listing on picture.Id=1;
