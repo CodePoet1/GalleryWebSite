@@ -43,10 +43,10 @@ function create_table_gallery($conn)
 
     mysql_select_db('AnthonyOrme_DB');
     $retval = mysql_query( $sql, $conn );
-    if(! $retval )
+    if(! $retval ) Graphs
     {
-        die('Could not create table: ' . mysql_error()); 
-   }
+        die('Could not create table: ' . mysql_error());
+    }
     echo "Table gallery created successfully\n";
 }
 
