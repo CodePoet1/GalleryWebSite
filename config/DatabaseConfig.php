@@ -58,7 +58,6 @@ function create_table_picture($conn)
         GalleryId               INT NOT NULL,
         MainPictureFilename     VARCHAR(64) NOT NULL,
         GalleryPictureFilename  VARCHAR(64) NOT NULL,
-        VersionListing          INT NOT NULL,
         Description             VARCHAR(1024) NOT NULL,
         primary key (Id),
         foreign key (GalleryId) references gallery(Id))";
@@ -155,38 +154,37 @@ function insert_test_data_into_picture($conn)
          GalleryId,
          MainPictureFilename, 
          GalleryPictureFilename,
-         VersionListing,
          Description)
          VALUES(
          '1',
          'Manchester.jpg',
          'Manchester-Gallery.jpg',
-         '1', 'Manchester Town'),
+         'Manchester Town'),
          (
          '1',
          'RedWine.jpg',
          'RedWine-Gallery.jpg',
-         '1', 'Red Wine Relaxing'),
+         'Red Wine Relaxing'),
          ('1',
           'AGlassOfRed-51x51cm.jpg',
           'AGlassOfRed-51x51cm-Gallery.jpg',
-          '1','A Glass Of Red Wine'),
+          'A Glass Of Red Wine'),
          ('1',
           'Marionette122x68oil.jpg',
           'Marionette122x68oil-Gallery.jpg',
-          '1','Marionette'),
+          'Marionette'),
          ('1',
           'OutOnTheTown-NewYork.jpg',
           'OutOnTheTown-NewYork-Gallery.jpg',
-          '1','Out On The Town in New York'),
+          'Out On The Town in New York'),
          ('1',
           'PreludeToAChainReadction122x90cm.jpg',
           'PreludeToAChainReadction122x90cm-Gallery.jpg',
-          '1','Prelude To A Chain Reaction'),
+          'Prelude To A Chain Reaction'),
          ('1',
           'RedFalling.jpg',
           'RedFalling-Gallery.jpg',
-          '1','Red Falling')";
+          'Red Falling')";
     
     mysql_select_db('AnthonyOrme_DB');
     $retval = mysql_query( $sql, $conn );
