@@ -120,7 +120,11 @@ function insert_test_data_into_painting_type($conn)
            ('Original Oil'),
            ('Original Pastel'),
            ('Print'),
-           ('Giclee Print')";
+           ('Giclee Print'),
+           ('Oil Painting On Box Canvas'),
+           ('Oil Painting On Board')";
+
+
     mysql_select_db('AnthonyOrme_DB');
     $retval = mysql_query( $sql, $conn );
     if(! $retval )
@@ -162,7 +166,27 @@ function insert_test_data_into_picture($conn)
          '1',
          'RedWine.jpg',
          'RedWine-Gallery.jpg',
-         '1', 'Red Wine Relaxing')";
+         '1', 'Red Wine Relaxing'),
+         ('1',
+          'AGlassOfRed-51x51cm.jpg',
+          'AGlassOfRed-51x51cm-Gallery.jpg',
+          '1','A Glass Of Red Wine'),
+         ('1',
+          'Marionette122x68oil.jpg',
+          'Marionette122x68oil-Gallery.jpg',
+          '1','Marionette'),
+         ('1',
+          'OutOnTheTown-NewYork.jpg',
+          'OutOnTheTown-NewYork-Gallery.jpg',
+          '1','Out On The Town in New York'),
+         ('1',
+          'PreludeToAChainReadction122x90cm.jpg',
+          'PreludeToAChainReadction122x90cm-Gallery.jpg',
+          '1','Prelude To A Chain Reaction'),
+         ('1',
+          'RedFalling.jpg',
+          'RedFalling-Gallery.jpg',
+          '1','Red Falling')";
     
     mysql_select_db('AnthonyOrme_DB');
     $retval = mysql_query( $sql, $conn );
