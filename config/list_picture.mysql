@@ -1,7 +1,6 @@
 use AnthonyOrme_DB;
-select picture.MainPictureFilename, painting_type.Description, gallery.Description,
-       version_listing.SizeHeight, version_listing.SizeWidth, version_listing.Price
-       from picture
-       inner join gallery on gallery.Id=1
-       inner join version_listing on picture.Id=2
-       inner join painting_type on version_listing.PaintingType=painting_type.Id;
+select painting_type.Description, version_listing.price, picture.MainPictureFilename
+from version_listing
+inner join picture on version_listing.PicId = picture.Id
+inner join painting_type on version_listing.PaintingType = painting_type.Id
+where picture.Id = 6;
