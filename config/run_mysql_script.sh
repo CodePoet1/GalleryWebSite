@@ -5,13 +5,19 @@ ClearScr=$2
 User="root"
 Password="monty123"
 
-run_script(){ 
-    if [ $ClearScr -eq "1" ]
-    then
-	eval "clear"
-    fi
+run_script(){
+    
+    case "$ClearScr" in
+	"-c")
+	    eval "clear"
+	    ;;
+	*)
+	    ;;
+    esac
+
     echo "Script file -> $InScriptFile "
     eval "mysql -u $User -p$Password < $InScriptFile "
+
 }
 
 error_end(){ 

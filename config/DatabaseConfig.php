@@ -78,8 +78,8 @@ function create_table_version_listing($conn)
         Id                      INT NOT NULL AUTO_INCREMENT,
         PicId                   INT NOT NULL,
         PaintingType            INT NOT NULL,
-        SizeWidth               INT NOT NULL,
-        SizeHeight              INT NOT NULL,
+        Width                   INT NOT NULL,
+        Height                  INT NOT NULL,
         Price                   DECIMAL(6,2) NOT NULL,
         primary key (Id),
         foreign key (PicId) references  picture(Id),
@@ -200,16 +200,17 @@ function insert_test_data_into_version_listing($conn)
     $sql = "INSERT INTO version_listing(
          PicId,
          PaintingType,
-         SizeWidth,
-         SizeHeight,
+         Width,
+         Height,
          Price)
          VALUES
          ('2','1','100','200','127'),
-         ('2','2','100','200','100'),
+         ('2','2','100','200','3000'),
          ('2','3','100','200','2500'),
          ('3','6','510','510','1500'),
          ('4','7','1220','680','2000'),
          ('6','7','1220','900','2500'),
+         ('7','6','760','510','1700'),
          ('7','7','760','510','1800')";
 
     mysql_select_db('AnthonyOrme_DB');
