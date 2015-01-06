@@ -7,4 +7,4 @@ select painting_type.Description,
     from version_listing
     inner join picture on version_listing.PicId = picture.Id
     inner join painting_type on version_listing.PaintingType = painting_type.Id
-    where picture.Id = 2 and picture.GalleryId = 1;
+    where picture.Id = 12 and picture.GalleryId = 2;

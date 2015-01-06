@@ -120,6 +120,7 @@ function insert_test_data_into_painting_type($conn)
            ('Original Pastel'),
            ('Print'),
            ('Giclee Print'),
+           ('Limited Edition Giclee Print'),
            ('Oil Painting On Box Canvas'),
            ('Oil Painting On Board')";
 
@@ -137,8 +138,9 @@ function insert_test_data_into_gallery($conn)
 {
    $sql = "INSERT INTO gallery (
         Description)
-        VALUES(
-        'Main')";
+        VALUES
+        ('Main'),
+        ('29 November 2013')";
     mysql_select_db('AnthonyOrme_DB');
     $retval = mysql_query( $sql, $conn );
     if(! $retval )
@@ -150,7 +152,7 @@ function insert_test_data_into_gallery($conn)
 
 function insert_test_data_into_picture($conn)
 {
-    $sql = "INSERT INTO picture (
+  $sql = "INSERT INTO picture (
          GalleryId,
          MainPictureFilename, 
          GalleryPictureFilename,
@@ -184,7 +186,35 @@ function insert_test_data_into_picture($conn)
          ('1',
           'RedFalling.jpg',
           'RedFalling-Gallery.jpg',
-          'Red Falling')";
+          'Red Falling'),
+         ('2',
+          'sacre-coeur-montmartre-paris.jpg',
+          'sacre-coeur-montmartre-paris-Gallery.jpg',
+          'Sacre Coeur, Montmartre Paris'),
+         ('2',
+          'parisian-summer.jpg',
+          'parisian-summer-Gallery.jpg',
+          'Parisian Summer'),
+         ('2',
+          'grand-canal-venice.jpg',
+          'grand-canal-venice-Gallery.jpg',
+          'Grand Canal Venice'),
+         ('2',
+          'champs-elysees-paris.jpg',
+          'champs-elysees-paris-Gallery.jpg',
+          'Champs Elysees, Paris'),
+         ('2',
+          'artists-square-montmartre-paris.jpg',
+          'artists-square-montmartre-paris-Gallery.jpg',
+          'Artists Square, Montmartre, Paris'),
+         ('2',
+          'paramour.jpg',
+          'paramour-Gallery.jpg',
+          'Paramour'),
+         ('2',
+          'lenka.jpg',
+          'lenka-Gallery.jpg',
+          'Lenka')";
     
     mysql_select_db('AnthonyOrme_DB');
     $retval = mysql_query( $sql, $conn );
@@ -207,11 +237,25 @@ function insert_test_data_into_version_listing($conn)
          ('2','1','100','200','127'),
          ('2','2','100','200','3000'),
          ('2','3','100','200','2500'),
-         ('3','6','510','510','1500'),
-         ('4','7','1220','680','2000'),
-         ('6','7','1220','900','2500'),
-         ('7','6','760','510','1700'),
-         ('7','7','760','510','1800')";
+         ('3','7','510','510','1500'),
+         ('4','8','1220','680','2000'),
+         ('6','8','1220','900','2500'),
+         ('7','7','760','510','1700'),
+         ('7','8','760','510','1800'),
+         ('8','3','650','500','1950'),
+         ('8','6','650','500','225'),
+         ('9','3','650','500','1950'),
+         ('9','6','650','500','225'),
+         ('10','3','650','500','1950'),
+         ('10','6','650','500','225'),
+         ('11','3','650','500','1950'),
+         ('11','6','650','500','225'),
+         ('12','3','650','500','1950'),
+         ('12','6','650','500','225'),
+         ('13','3','650','500','1950'),
+         ('13','6','650','500','225'),
+         ('14','3','650','500','1950'),
+         ('14','6','650','500','225')";
 
     mysql_select_db('AnthonyOrme_DB');
     $retval = mysql_query( $sql, $conn );
