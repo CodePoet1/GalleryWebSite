@@ -1,3 +1,0 @@
-use AnthonyOrme_DB;
-drop database AnthonyOrme_DB;
-
