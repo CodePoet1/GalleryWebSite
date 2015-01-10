@@ -1,0 +1,24 @@
+***************************************************************************************
+**                                                                                   **
+** Gallery Web Site for Anthony Orme                                                 **
+**                                                                                   **
+** Project started 1 Dec 2014                                                        **
+**                                                                                   **
+**                                                                                   **
+***************************************************************************************
+
+Problem I need to resolve;	
+1. To build a web site for AnthonyOrme gallery to show paintings and prints for sale.  
+2. Be able to upload new paintings and prints into named galleries, this must be accomplished through a user interface without having to interact with the database directly.  
+3. Buyers should be able to order an pay on line using credit card.  When a purchase is made emails are sent to the site administrators
+4. Collect buyers contact details for future marketing
+5. Provide logging facilities for user access and gain stats for how many access and where from
+
+
+
+ToDo
+1. Create gallery system that shows each gallery as a tiled web page, each tile being one of the galleries
+2. Click on a gallery to show the paintings in that gallery as a tiled web page.  Each tile has a picture with each of the buying options and prices below it, e.g "Original Oil £3000 []"
+3. Click on a picture to show picture in full size 
+4. Click on the buying option to add to a cart
+5. check out in the cart to buy a picture and send to the site Admin
