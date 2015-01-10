@@ -1,13 +1,20 @@
 <?php
 
-$web_url="localhost";
+
 
 function write_left_menu(){
-  echo "<div class=\"sidebar_left\">";
-  echo "<a href=\"$web_url/Gallery-AnthonyOrme/index.php\">Home</a><br>";
-  echo "<a href=\"$web_url/Gallery-AnthonyOrme/about/about.php\">About</a><br>";
-  echo "<a href=\"$web_url/Gallery-AnthonyOrme/contact/contact.php\">Contact</a><br>";
-  echo "</div>";  
+    //Must be changed for production
+    //web_sub allows the website to be put into a debug directory on development pc during development.  
+    $web_sub = '/Gallery-AnthonyOrme';  //this is also defined in function web_page_header() at end of this file
+    $web_url_home =  $web_sub . '/index.php';
+    $web_url_about = $web_sub . '/about/about.php';
+    $web_url_contact = $web_sub . '/contact/contact.php';
+
+    echo "<div class=\"sidebar_left\">";
+    echo "<a href=\"{$web_url_home}\">Home</a><br>";
+    echo "<a href=\"{$web_url_about}\">About</a><br>";
+    echo "<a href=\"{$web_url_contact}\">Contact</a><br>";
+    echo "</div>";  
 }
 
 function write_header()
@@ -60,10 +67,13 @@ function write_three_col_start(){
 
 
 function web_page_header(){
+  $web_sub = '/Gallery-AnthonyOrme';
+  $css_location = $web_sub . '/mainstyle.css';
+
   echo "<!DOCTYPE html>";
   echo "<html lang=\"en-US\">";
   echo "<html>";
-  echo "<head><link rel=\"stylesheet\" href=\"$web_url/Gallery-AnthonyOrme/mainstyle.css\"></head>";
+  echo "<head><link rel=\"stylesheet\" href=\"{$css_location}\"></head>";
 }
 
 ?>
