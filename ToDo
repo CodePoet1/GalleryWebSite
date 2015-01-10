@@ -16,7 +16,7 @@ Problem I need to resolve;
 
 
 
-ToDo
+ToDo	   
 1. Create gallery system that shows each gallery as a tiled web page, each tile being one of the galleries
 2. Click on a gallery to show the paintings in that gallery as a tiled web page.  Each tile has a picture with each of the buying options and prices below it, e.g "Original Oil £3000 []"
 3. Click on a picture to show picture in full size 

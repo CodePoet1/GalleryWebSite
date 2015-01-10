@@ -40,7 +40,31 @@ body {
     vertical-align: top;  
 }  
 
+.main_gallery_col_one {  
+    width: 30%;
+    background-color: #f0f0f0;  
+    font-family: sans-serif;
+    display: table-cell;  
+    float: none;  
+    padding: 10px;  
+    vertical-align: top;  
+}  
+
+.main_gallery_col_two {  
+    width: 30%;  
+    background-color: #f0f0f0;  
+    font-family: sans-serif;
+    display: table-cell;  
+    float: none;  
+    padding: 10px;  
+    vertical-align: top;  
+}  
+
 .sidebar_left {  
+    vertical-align:top;
+    position: float;
+    top: 30px;
+    margin:0px;
     padding: 20px;
     line-height: 30px;
     font-family: sans-serif;
@@ -50,6 +74,10 @@ body {
 }  
 
 .sidebar_right {
+    vertical-align:top;
+    position: float;
+    margin:0px;
+    top: 30px;
     padding: 20px;
     line-height: 25px;
     font-family: sans-serif;
@@ -72,3 +100,59 @@ body {
 
 
 
+
+
+
+
+/* GRID */
+
+.grid-container{
+    width: 100%; 
+    max-width: 1200px;      
+    padding: 10px;
+}
+
+/*-- our cleafix hack -- */ 
+.row:before, 
+.row:after {
+    content:"";
+    display: table ;
+    clear:both;
+}
+
+[class*='col-'] {
+    float: left; 
+    min-height: 1px; 
+    width: 16.66%; 
+    /*-- our gutter -- */
+    padding: 10px; 
+/*
+    background-color: #FFDCDC;
+*/
+}
+
+.col-1{ width: 13.66%; }  /* was 16.66 */
+.col-2{ width: 30.33%; }  /* was 33.33 */
+.col-3{ width: 47%;    }  /* was 50 */
+.col-4{ width: 66.66%; }
+.col-5{ width: 83.33%; }
+.col-6{ width: 100%;   }
+
+.outline, .outline *{
+/*    outline: 1px solid #F6A1A1; */
+}
+
+
+/*-- some extra column content styling --*/
+[class*='col-'] > p {
+ /*background-color: #FFC2C2; */
+ padding: 0;
+ margin: 0;
+ text-align: centre; 
+ color: black; 
+}
+
+[class*='col-'] > img {
+ /*background-color: #FFC2C2; */
+
+}

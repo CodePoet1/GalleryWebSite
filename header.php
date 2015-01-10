@@ -9,11 +9,13 @@ function write_left_menu(){
     $web_url_home =  $web_sub . '/index.php';
     $web_url_about = $web_sub . '/about/about.php';
     $web_url_contact = $web_sub . '/contact/contact.php';
+    $web_url_gallery = $web_sub . '/gallery/gallery-listing.php';
 
     echo "<div class=\"sidebar_left\">";
     echo "<a href=\"{$web_url_home}\">Home</a><br>";
     echo "<a href=\"{$web_url_about}\">About</a><br>";
     echo "<a href=\"{$web_url_contact}\">Contact</a><br>";
+    echo "<a href=\"{$web_url_gallery}\">Galleries</a><br>";
     echo "</div>";  
 }
 
@@ -60,6 +62,35 @@ function write_main_front_page(){
   echo "<p><b>The Snow-Ball, An Exclusive Limited Edition Print<BR></b></p>";
   echo "</div> </div>";
 }  
+
+function write_main_front_page_b(){
+  echo "<div class=\"main\">";
+  echo "<div id=\"FrontPagePictureCenter\">";
+  echo "<img src=\"../pictures/SnowBall_FP.jpg\" width=\"90%\">";
+  echo "<p><b>The Snow-Ball, An Exclusive Limited Edition Print<BR></b></p>";
+  echo "</div> </div>";
+}  
+
+function write_main_gallery_col_one(){
+  echo "<div class=\"main_gallery_col_one\">";
+  echo "<div id=\"FrontPagePictureCenter\">";
+  echo "<img src=\"../pictures/SnowBall_FP.jpg\" width=\"90%\">";
+  echo "<p><b>The Snow-Ball, An Exclusive Limited Edition Print<BR></b></p>";
+  echo "<img src=\"../pictures/SnowBall_FP.jpg\" width=\"90%\">";
+  echo "<p><b>The Snow-Ball, An Exclusive Limited Edition Print<BR></b></p>";
+  echo "</div> </div>";
+}  
+
+function write_main_gallery_col_two(){
+  echo "<div class=\"main_gallery_col_two\">";
+  echo "<div id=\"FrontPagePictureCenter\">";
+  echo "<img src=\"../pictures/SnowBall_FP.jpg\" width=\"90%\">";
+  echo "<p><b>The Snow-Ball, An Exclusive Limited Edition Print<BR></b></p>";
+  echo "<img src=\"../pictures/SnowBall_FP.jpg\" width=\"90%\">";
+  echo "<p><b>The Snow-Ball, An Exclusive Limited Edition Print<BR></b></p>";
+  echo "</div> </div>";
+}  
+
 
 function write_three_col_start(){
   echo "<div class=\"container clearfix\">";  
