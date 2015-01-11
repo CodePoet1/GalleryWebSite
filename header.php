@@ -63,33 +63,6 @@ function write_main_front_page(){
   echo "</div> </div>";
 }  
 
-function write_main_front_page_b(){
-  echo "<div class=\"main\">";
-  echo "<div id=\"FrontPagePictureCenter\">";
-  echo "<img src=\"../pictures/SnowBall_FP.jpg\" width=\"90%\">";
-  echo "<p><b>The Snow-Ball, An Exclusive Limited Edition Print<BR></b></p>";
-  echo "</div> </div>";
-}  
-
-function write_main_gallery_col_one(){
-  echo "<div class=\"main_gallery_col_one\">";
-  echo "<div id=\"FrontPagePictureCenter\">";
-  echo "<img src=\"../pictures/SnowBall_FP.jpg\" width=\"90%\">";
-  echo "<p><b>The Snow-Ball, An Exclusive Limited Edition Print<BR></b></p>";
-  echo "<img src=\"../pictures/SnowBall_FP.jpg\" width=\"90%\">";
-  echo "<p><b>The Snow-Ball, An Exclusive Limited Edition Print<BR></b></p>";
-  echo "</div> </div>";
-}  
-
-function write_main_gallery_col_two(){
-  echo "<div class=\"main_gallery_col_two\">";
-  echo "<div id=\"FrontPagePictureCenter\">";
-  echo "<img src=\"../pictures/SnowBall_FP.jpg\" width=\"90%\">";
-  echo "<p><b>The Snow-Ball, An Exclusive Limited Edition Print<BR></b></p>";
-  echo "<img src=\"../pictures/SnowBall_FP.jpg\" width=\"90%\">";
-  echo "<p><b>The Snow-Ball, An Exclusive Limited Edition Print<BR></b></p>";
-  echo "</div> </div>";
-}  
 
 
 function write_three_col_start(){
