@@ -1,6 +1,8 @@
 
 <?php
 include '../header.php';
+include 'db_scripts/gallery_listing_scripts.php';
+
 
 web_page_header();
 web_page_body();

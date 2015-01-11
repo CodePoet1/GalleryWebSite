@@ -31,7 +31,29 @@ if ($conn->query($sql) == TRUE) {
     insert_test_data_into_picture($conn);
     insert_test_data_into_painting_type($conn);
     insert_test_data_into_version_listing($conn);
+}
 
+function connect_to_database(){
+  global $servername, $username, $password;
+
+  // Create connection
+  $conn = new mysqli($servername, $username, $password);
+  // Check connection
+  if ($conn->connect_error) {
+    //die("Connection failed: " . $conn->connect_error);
+    //echo "<P> Error connecting to database " .$conn->connect_error . "</p>";
+    return $conn;
+  }
+  else{
+    //connected to correct mysql database
+    return $conn;
+  }
+
+}
+
+function select_database($conn){
+  $retval = $conn->select_db('AnthonyOrme_DB');
+  return $retval;
 }
 
 function create_table_gallery($conn)
