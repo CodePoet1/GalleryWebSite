@@ -1,4 +1,12 @@
 <?php
+/****************************************************************************************
+ **                                                                                    **
+ **     gallery_listing_scripts.php                                                    **
+ **     TonyO 11th Jan 2015                                                            **
+ **                                                                                    **
+ **     Displays the gallery front pages in a 2xN grid format                          **
+ **                                                                                    **
+ ***************************************************************************************/
 include '../header.php';
 include '../config/DatabaseConfig.php';
 
@@ -74,20 +82,16 @@ function list_galleries(){
 
 	//randomly choose a picture from the gallery
 	$ran_num = rand($lowId,$highId);
-	//printf("RanNum = %d\n",$ran_num);
-
 	$query = "select * from picture where Id = " . $ran_num ;
 	if($result = $conn->query($query)){
 	  
 	  if($row = $result->fetch_assoc()){
 	    $MainPic = $row['MainPictureFilename'];
 	    $Desc = $row['Description'];
-	    //printf("Name -> %s \n", $MainPic);
-	    //printf("Desc -> %s \n", $Desc);
-	    //printf("Gallery name -> %s \n\n",  $GalleryName);
 	  }
 	}
 	
+	//Build up a multidemensional array to make web page display easier
 	array_push($GalleryListArray,
 		   array(
 			 $GalleryName,
@@ -95,24 +99,18 @@ function list_galleries(){
 			 $Desc
 			 )
 		   );
-
       }
-      //      printf("Array dump _______________ \n");
-      //      var_dump($GalleryListArray);
+
       $ArraySize = sizeof($GalleryListArray);
       $ColCount = 1;
-      //printf("Array size = %d\n",$ArraySize);
 
+      //Display middle column grid on web page
       echo '<div class="grid-container outline">';
       echo '<div class="row" >';
 
       $DisplayCount=1;
       do{
-	//	printf("Gallname %s, count=%d, col=%d\n",$GalleryListArray[$DisplayCount][0], $DisplayCount, $ColCount);
-	//        echo '<div class="col-3">';
-	//echo '<img src="../pictures/SnowBall_FP.jpg" width="100%">';
-	//echo '<p><b>The Snow-Ball, An Exclusive Limited Edition Print <BR></b></p>';
-	//echo '</div>';
+	//this is one grid element
         echo '<div class="col-3">';
 	echo '<img src="../pictures/' . $GalleryListArray[$DisplayCount][1] . '"' . ' width="100%">';
 	echo '<p><b>' . $GalleryListArray[$DisplayCount][0] . ' Exhibition<BR></b></p>';
@@ -121,15 +119,16 @@ function list_galleries(){
 
 
 	$ColCount++;
+	//If have reached second column add a row
 	if($ColCount==3){
-	  //	  printf("New row\n");
 	  echo '</div>';
 	  $ColCount=1;
-	}
-	if($DisplayCount == $ArraySize-1){
-	  //printf("New row2\n");
-	  echo "</div>";
-	  echo '<div class="row" >';
+	  
+	  //And if have not reached end of the gallery count add another row
+	  if($DisplayCount <= $ArraySize-1){
+	    echo "</div>";
+	    echo '<div class="row" >';
+	  }
 	}
 
       }while($DisplayCount++ < $ArraySize-1);
@@ -139,29 +138,5 @@ function list_galleries(){
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>
