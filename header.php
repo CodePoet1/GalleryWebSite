@@ -9,7 +9,7 @@ function write_left_menu(){
     $web_url_home =  $web_sub . '/index.php';
     $web_url_about = $web_sub . '/about/about.php';
     $web_url_contact = $web_sub . '/contact/contact.php';
-    $web_url_gallery = $web_sub . '/gallery/gallery-listing.php';
+    $web_url_gallery = $web_sub . '/db_scripts/gallery_listing_scripts.php';
 
     echo "<div class=\"sidebar_left\">";
     echo "<a href=\"{$web_url_home}\">Home</a><br>";
